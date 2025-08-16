@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 KONGALI1720 Elite Portfolio | Professional Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .matrix-bg {
+            background: linear-gradient(45deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            top: -100px;
+            color: #00ff00;
+            font-size: 12px;
+            opacity: 0.3;
+            animation: matrix-fall linear infinite;
+        }
+        
+        @keyframes matrix-fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .scan-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            background: linear-gradient(
+                transparent 50%, 
+                rgba(0, 255, 0, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            animation: scan 0.1s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 4px; }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+        
+        .terminal-window {
+            background: #000;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, #00ff00, #00ffff);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: perspective(1px) translateZ(0);
+        }
+        
+        .cyber-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        /* 💀 ELITE SKULL EYES ANIMATIONS */
+        @keyframes breathing {
+            0%, 100% { 
+                transform: scale(1) translateY(0px);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: scale(1.1) translateY(-2px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes eye-glow-left {
+            0%, 25% { 
+                background: radial-gradient(circle, #00ff00 10%, #00aa00 40%, #004400 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #00ff00, 
+                    0 0 60px #00ff00,
+                    inset 0 0 20px #00ff00,
+                    inset 0 0 40px #00aa00;
+                border: 2px solid #00ff00;
+            }
+            26%, 75% { 
+                background: radial-gradient(circle, #ff0000 10%, #aa0000 40%, #440000 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #ff0000, 
+                    0 0 60px #ff0000,
+                    inset 0 0 20px #ff0000,
+                    inset 0 0 40px #aa0000;
+                border: 2px solid #ff0000;
+            }
+            76%, 100% { 
+                background: radial-gradient(circle, #00ff00 10%, #00aa00 40%, #004400 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #00ff00, 
+                    0 0 60px #00ff00,
+                    inset 0 0 20px #00ff00,
+                    inset 0 0 40px #00aa00;
+                border: 2px solid #00ff00;
+            }
+        }
+
+        @keyframes eye-glow-right {
+            0%, 25% { 
+                background: radial-gradient(circle, #ff0000 10%, #aa0000 40%, #440000 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #ff0000, 
+                    0 0 60px #ff0000,
+                    inset 0 0 20px #ff0000,
+                    inset 0 0 40px #aa0000;
+                border: 2px solid #ff0000;
+            }
+            26%, 75% { 
+                background: radial-gradient(circle, #00ff00 10%, #00aa00 40%, #004400 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #00ff00, 
+                    0 0 60px #00ff00,
+                    inset 0 0 20px #00ff00,
+                    inset 0 0 40px #00aa00;
+                border: 2px solid #00ff00;
+            }
+            76%, 100% { 
+                background: radial-gradient(circle, #ff0000 10%, #aa0000 40%, #440000 70%, transparent 100%);
+                box-shadow: 
+                    0 0 30px #ff0000, 
+                    0 0 60px #ff0000,
+                    inset 0 0 20px #ff0000,
+                    inset 0 0 40px #aa0000;
+                border: 2px solid #ff0000;
+            }
+        }
+
+        .animate-breathing {
+            animation: breathing 3s ease-in-out infinite;
+        }
+
+        .animate-eye-glow-left {
+            animation: eye-glow-left 4s ease-in-out infinite;
+        }
+
+        .animate-eye-glow-right {
+            animation: eye-glow-right 4s ease-in-out infinite;
+        }
+
+        /* 💀 ELITE SKULL EYES ANIMATIONS */
+        @keyframes breathing {
+            0%, 100% { 
+                transform: scale(1) translateY(0px);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: scale(1.1) translateY(-2px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes eye-glow-left {
+            0%, 25% { 
+                background: radial-gradient(circle, #00ff00 0%, #00ff00 30%, transparent 70%);
+                box-shadow: 0 0 20px #00ff00, inset 0 0 15px #00ff00;
+            }
+            26%, 75% { 
+                background: radial-gradient(circle, #ff0000 0%, #ff0000 30%, transparent 70%);
+                box-shadow: 0 0 20px #ff0000, inset 0 0 15px #ff0000;
+            }
+            76%, 100% { 
+                background: radial-gradient(circle, #00ff00 0%, #00ff00 30%, transparent 70%);
+                box-shadow: 0 0 20px #00ff00, inset 0 0 15px #00ff00;
+            }
+        }
+
+        @keyframes eye-glow-right {
+            0%, 25% { 
+                background: radial-gradient(circle, #ff0000 0%, #ff0000 30%, transparent 70%);
+                box-shadow: 0 0 20px #ff0000, inset 0 0 15px #ff0000;
+            }
+            26%, 75% { 
+                background: radial-gradient(circle, #00ff00 0%, #00ff00 30%, transparent 70%);
+                box-shadow: 0 0 20px #00ff00, inset 0 0 15px #00ff00;
+            }
+            76%, 100% { 
+                background: radial-gradient(circle, #ff0000 0%, #ff0000 30%, transparent 70%);
+                box-shadow: 0 0 20px #ff0000, inset 0 0 15px #ff0000;
+            }
+        }
+
+        .animate-breathing {
+            animation: breathing 3s ease-in-out infinite;
+        }
+
+        .animate-eye-glow-left {
+            animation: eye-glow-left 4s ease-in-out infinite;
+        }
+
+        .animate-eye-glow-right {
+            animation: eye-glow-right 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="matrix-bg text-green-400 min-h-screen overflow-x-hidden">
+    <!-- Matrix Rain Effect -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Scan Lines -->
+    <div class="scan-lines"></div>
+    
+    <!-- Navigation -->
+    <nav class="relative z-20 bg-black/80 border-b border-green-500/30 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-cyan-400 animate-pulse">
+                        🌌 KONGALI1720
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="showSection('home')" class="nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-cyan-400 border-b-2 border-cyan-400">
+                        Home
+                    </button>
+                    <button onclick="showSection('about')" class="nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-gray-300">
+                        About
+                    </button>
+                    <button onclick="showSection('skills')" class="nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-gray-300">
+                        Skills
+                    </button>
+                    <button onclick="showSection('projects')" class="nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-gray-300">
+                        Projects
+                    </button>
+                    <button onclick="showSection('contact')" class="nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-gray-300">
+                        Contact
+                    </button>
+                    <button onclick="toggleTerminal()" class="cyber-button">
+                        💻 Terminal
+                    </button>
+                    <button onclick="toggleAIChat()" class="cyber-button" style="margin-left: 1rem;">
+                        🤖 AI Assistant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-20">
+        <!-- Home Section -->
+        <section id="home" class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-8 glow">
+                <div class="text-center space-y-8">
+                    <div class="text-6xl mb-4 animate-pulse relative">
+                      💀
+                      <!-- Elite Skull Eyes with Breathing Animation -->
+                      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <!-- Left Eye Socket -->
+                        <div class="absolute w-6 h-6 rounded-full border-1 border-white/15 animate-breathing flex items-center justify-center" style="left: -25px; top: -12px;">
+                          <div class="w-3 h-3 rounded-full animate-eye-glow-left shadow-lg"></div>
+                        </div>
+                        <!-- Right Eye Socket -->
+                        <div class="absolute w-6 h-6 rounded-full border-1 border-white/15 animate-breathing flex items-center justify-center" style="right: -25px; top: -12px;">
+                          <div class="w-3 h-3 rounded-full animate-eye-glow-right shadow-lg"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h1 class="text-4xl font-bold text-cyan-400 mb-4">KONGALI1720</h1>
+                    <p class="text-xl text-green-400 mb-6">Elite Developer • Cybersecurity Expert • AI Specialist</p>
+                    <p class="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        Professional developer with 5+ years of experience in building elite-grade applications, 
+                        cybersecurity solutions, and AI-powered systems. Specialized in creating high-performance, 
+                        secure, and scalable digital solutions for modern enterprises.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-12">
+                        <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 hover:border-cyan-400 transition-all">
+                            <div class="text-2xl mb-3">🚀</div>
+                            <h3 class="text-lg font-bold text-cyan-400 mb-2">Full-Stack Development</h3>
+                            <p class="text-gray-300 text-sm">Modern web applications with React, Node.js, and cloud integration</p>
+                        </div>
+                        
+                        <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 hover:border-cyan-400 transition-all">
+                            <div class="text-2xl mb-3">🛡️</div>
+                            <h3 class="text-lg font-bold text-cyan-400 mb-2">Cybersecurity</h3>
+                            <p class="text-gray-300 text-sm">Penetration testing, security audits, and threat analysis</p>
+                        </div>
+                        
+                        <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 hover:border-cyan-400 transition-all">
+                            <div class="text-2xl mb-3">🤖</div>
+                            <h3 class="text-lg font-bold text-cyan-400 mb-2">AI/ML Integration</h3>
+                            <p class="text-gray-300 text-sm">Custom AI solutions, chatbots, and machine learning models</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-8 glow">
+                <h1 class="text-3xl font-bold text-cyan-400 mb-8">👑 About Elite Developer</h1>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 mb-4">🎯 Professional Journey</h3>
+                        <div class="space-y-4 text-gray-300">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                                <div>
+                                    <div class="font-bold text-green-400">Senior Full-Stack Developer</div>
+                                    <div class="text-sm text-gray-400">2022 - Present</div>
+                                    <div class="text-sm">Leading development of enterprise-grade applications</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
+                                <div>
+                                    <div class="font-bold text-cyan-400">Cybersecurity Specialist</div>
+                                    <div class="text-sm text-gray-400">2021 - Present</div>
+                                    <div class="text-sm">Penetration testing and security consulting</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                                <div>
+                                    <div class="font-bold text-yellow-400">Frontend Developer</div>
+                                    <div class="text-sm text-gray-400">2020 - 2022</div>
+                                    <div class="text-sm">React.js and modern frontend development</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 mb-4">🏆 Achievements</h3>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>50+ Projects Successfully Delivered</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>98% Client Satisfaction Rate</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>AWS Certified Solutions Architect</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>Certified Ethical Hacker (CEH)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>Google Cloud Professional Developer</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-green-400">✅</span>
+                                <span>React.js Expert Certification</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-4">💡 Philosophy</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        "Elite development is not just about writing code - it's about crafting digital experiences that 
+                        push the boundaries of what's possible. Every project is an opportunity to innovate, secure, and 
+                        deliver excellence that exceeds expectations. I believe in combining cutting-edge technology with 
+                        military-grade security to create solutions that are not just functional, but legendary."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-8 glow">
+                <h1 class="text-3xl font-bold text-cyan-400 mb-8">⚡ Technical Arsenal</h1>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-black/50 border border-green-500/30 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center">
+                            <span class="mr-2">🌐</span> Frontend
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">React.js</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Vue.js</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">TypeScript</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/50 border border-green-500/30 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center">
+                            <span class="mr-2">💻</span> Backend
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Node.js</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Python</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Go</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/50 border border-green-500/30 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center">
+                            <span class="mr-2">🛡️</span> Security
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Penetration Testing</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">OWASP</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Network Security</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-8 glow">
+                <h1 class="text-3xl font-bold text-cyan-400 mb-8">🎯 Elite Project Portfolio</h1>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 hover:border-cyan-400 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cyan-400">🌌 KONGALI1720 Elite Terminal</h3>
+                            <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">FEATURED</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Professional hacker-themed terminal interface with working shell commands, 
+                            matrix effects, and interactive cybersecurity tools.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">HTML5</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">CSS3</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">JavaScript</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Terminal</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded hover:bg-green-500/40 transition-all">
+                                🔗 Live Demo
+                            </button>
+                            <button class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded hover:bg-cyan-500/40 transition-all">
+                                📁 Source Code
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 hover:border-cyan-400 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cyan-400">🏦 Quantum Banking System</h3>
+                            <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded">ENTERPRISE</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Secure banking platform with real-time transactions, AI fraud detection, 
+                            and quantum-grade encryption for financial institutions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">React.js</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">PostgreSQL</span>
+                            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Blockchain</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded hover:bg-green-500/40 transition-all">
+                                🔗 Live Demo
+                            </button>
+                            <button class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded">
+                                🔒 Private Repo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-black/50 border border-green-500/30 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-4">📊 Project Statistics</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400">50+</div>
+                            <div class="text-sm text-gray-400">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-cyan-400">98%</div>
+                            <div class="text-sm text-gray-400">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-400">5+</div>
+                            <div class="text-sm text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400">24/7</div>
+                            <div class="text-sm text-gray-400">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-8 glow">
+                <h1 class="text-3xl font-bold text-cyan-400 mb-8">📞 Elite Contact Channels</h1>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 mb-6">🔥 Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 p-4 bg-black/50 border border-green-500/30 rounded-lg hover:border-cyan-400 transition-all">
+                                <div class="text-2xl">📧</div>
+                                <div>
+                                    <div class="font-bold text-green-400">Email</div>
+                                    <div class="text-gray-300">kongali1720@elite-dev.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 p-4 bg-black/50 border border-green-500/30 rounded-lg hover:border-cyan-400 transition-all">
+                                <div class="text-2xl">💼</div>
+                                <div>
+                                    <div class="font-bold text-green-400">LinkedIn</div>
+                                    <div class="text-gray-300">linkedin.com/in/kongali1720</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 p-4 bg-black/50 border border-green-500/30 rounded-lg hover:border-cyan-400 transition-all">
+                                <div class="text-2xl">🐙</div>
+                                <div>
+                                    <div class="font-bold text-green-400">GitHub</div>
+                                    <div class="text-gray-300">github.com/kongali1720</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 mb-6">💰 Hiring Information</h3>
+                        <div class="bg-black/50 border border-green-500/30 rounded-lg p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-green-400 mb-2">🚀 Development Services</h4>
+                                    <div class="text-sm text-gray-300 space-y-1">
+                                        <div>• Full-Stack Web Apps: $50-100/hour</div>
+                                        <div>• Mobile Applications: $60-120/hour</div>
+                                        <div>• Enterprise Solutions: $80-150/hour</div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-green-400 mb-2">🛡️ Security Services</h4>
+                                    <div class="text-sm text-gray-300 space-y-1">
+                                        <div>• Penetration Testing: $100-200/hour</div>
+                                        <div>• Security Audits: $80-150/hour</div>
+                                        <div>• Compliance Setup: $70-130/hour</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat Assistant -->
+        <div id="ai-chat-mode" class="hidden min-h-screen bg-black/90 p-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="terminal-window shadow-2xl shadow-cyan-500/20">
+                    <!-- AI Chat Header -->
+                    <div class="bg-gray-900 border-b border-cyan-500/30 px-4 py-3 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-cyan-400 text-sm font-bold flex items-center">
+                            <span class="animate-pulse mr-2">🤖</span>
+                            KONGALI1720 AI Portfolio Assistant
+                        </div>
+                        <button onclick="toggleAIChat()" class="text-red-400 hover:text-red-300 transition-all">
+                            ✕
+                        </button>
+                    </div>
+
+                    <!-- AI Chat Content -->
+                    <div id="ai-chat-content" class="h-96 overflow-y-auto p-4 bg-gradient-to-b from-black to-gray-900 text-cyan-400 font-mono text-sm">
+                        <div class="mb-4">
+                            <div class="text-cyan-400 animate-pulse">
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    🤖 KONGALI1720 AI PORTFOLIO ASSISTANT                    ║
+║                         Elite Developer Intelligence System                  ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ 🔥 AI Status: ONLINE • Neural Networks: ACTIVE • Knowledge Base: LOADED    ║
+║ 💀 Personality: Elite Hacker Mode • Language: ID/EN • Expertise: MAX       ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Halo! Gue AI Assistant KONGALI1720! 🚀                                     ║
+║                                                                              ║
+║ Gue bisa bantuin lu dengan:                                                 ║
+║ • ❓ Jawab pertanyaan tentang skills & experience KONGALI1720               ║
+║ • 📋 Jelasin detail project portfolio                                       ║
+║ • 💼 Kasih info hiring rates & availability                                 ║
+║ • 🎯 Interview practice & technical questions                               ║
+║ • 🔥 Demo project features & capabilities                                   ║
+║                                                                              ║
+║ Ketik apa aja yang mau lu tanya! Gue siap bantuin! 💪                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+                            </div>
+                        </div>
+
+                        <div id="ai-chat-history"></div>
+
+                        <!-- Current AI Input -->
+                        <div class="flex items-center mt-4">
+                            <span class="text-cyan-400 mr-2 flex items-center">
+                                <span class="animate-pulse mr-1">🤖</span>
+                                AI@kongali1720:~$
+                            </span>
+                            <input type="text" id="ai-chat-input" class="flex-1 bg-transparent outline-none text-cyan-400 border-b border-cyan-400/30 focus:border-cyan-400" placeholder="Tanya apa aja tentang KONGALI1720..." autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- AI Quick Actions -->
+                    <div class="bg-gray-900 border-t border-cyan-500/30 px-4 py-3">
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="askAI('Jelasin skills KONGALI1720')" class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded hover:bg-cyan-500/40 transition-all">
+                                ⚡ Skills Overview
+                            </button>
+                            <button onclick="askAI('Project apa yang paling impressive?')" class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded hover:bg-green-500/40 transition-all">
+                                🎯 Best Projects
+                            </button>
+                            <button onclick="askAI('Berapa hiring rate KONGALI1720?')" class="text-xs bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded hover:bg-yellow-500/40 transition-all">
+                                💰 Hiring Info
+                            </button>
+                            <button onclick="askAI('Bisa interview practice?')" class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded hover:bg-purple-500/40 transition-all">
+                                🎤 Interview Prep
+                            </button>
+                            <button onclick="askAI('Demo project dong!')" class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded hover:bg-red-500/40 transition-all">
+                                🚀 Project Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal Mode -->
+        <div id="terminal-mode" class="hidden min-h-screen bg-black/90 p-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="terminal-window shadow-2xl shadow-green-500/20">
+                    <!-- Terminal Header -->
+                    <div class="bg-gray-900 border-b border-green-500/30 px-4 py-3 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-green-400 text-sm font-bold">KONGALI1720 Elite Portfolio Terminal</div>
+                        <button onclick="toggleTerminal()" class="text-red-400 hover:text-red-300 transition-all">
+                            ✕
+                        </button>
+                    </div>
+
+                    <!-- Terminal Content -->
+                    <div id="terminal-content" class="h-96 overflow-y-auto p-4 bg-black text-green-400 font-mono text-sm">
+                        <div class="mb-4">
+                            <div class="text-cyan-400">
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    KONGALI1720 ELITE PORTFOLIO TERMINAL                     ║
+║                        Professional Developer Interface                      ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Welcome to the interactive portfolio terminal!                              ║
+║ Type 'help' to see available commands.                                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+                            </div>
+                        </div>
+
+                        <div id="terminal-history"></div>
+
+                        <!-- Current Input -->
+                        <div class="flex items-center">
+                            <span class="text-cyan-400 mr-2">root@kongali1720:~#</span>
+                            <input type="text" id="terminal-input" class="flex-1 bg-transparent outline-none text-green-400" autocomplete="off">
+                            <span class="animate-pulse text-green-400">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="relative z-20 bg-black/80 border-t border-green-500/30 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <div class="text-2xl font-bold text-cyan-400 mb-4">🌌 KONGALI1720</div>
+                <p class="text-gray-300 mb-4">Elite Full-Stack Developer & Cybersecurity Specialist</p>
+                <div class="flex flex-wrap justify-center space-x-6 mb-4 text-sm">
+                    <span class="text-green-400">📧 kongali1720@elite-dev.com</span>
+                    <span class="text-green-400">💼 linkedin.com/in/kongali1720</span>
+                    <span class="text-green-400">🐙 github.com/kongali1720</span>
+                </div>
+                <div class="text-sm text-gray-400">
+                    © 2025 KONGALI1720. All rights reserved. | Made with 💀 and lots of ☕
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Matrix Rain Effect
+        function createMatrixRain() {
+            const matrixContainer = document.getElementById('matrixRain');
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(){}[]|\\:";\'<>?,./-_+=~`';
+            
+            for (let i = 0; i < 30; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                column.style.animationDelay = Math.random() * 2 + 's';
+                
+                let content = '';
+                for (let j = 0; j < 20; j++) {
+                    content += characters[Math.floor(Math.random() * characters.length)] + '<br>';
+                }
+                column.innerHTML = content;
+                
+                matrixContainer.appendChild(column);
+            }
+        }
+
+        // Navigation
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.remove('hidden');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = 'nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-gray-300';
+            });
+            
+            event.target.className = 'nav-btn px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 text-cyan-400 border-b-2 border-cyan-400';
+            
+            // Show/hide footer
+            const footer = document.getElementById('main-footer');
+            const terminalMode = document.getElementById('terminal-mode');
+            const aiChatMode = document.getElementById('ai-chat-mode');
+            if (terminalMode.classList.contains('hidden') && aiChatMode.classList.contains('hidden')) {
+                footer.classList.remove('hidden');
+            }
+        }
+
+        // Terminal
+        let terminalHistory = [];
+        let isTerminalOpen = false;
+
+        // AI Chat Assistant
+        let aiChatHistory = [];
+        let isAIChatOpen = false;
+
+        // AI Knowledge Base - KONGALI1720 Portfolio Data
+        const aiKnowledgeBase = {
+            skills: {
+                frontend: ['React.js', 'Vue.js', 'Angular', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+                backend: ['Node.js', 'Python', 'Go', 'Java', 'PHP', 'Express.js', 'Django'],
+                database: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Firebase'],
+                cloud: ['AWS', 'Google Cloud', 'Azure', 'Docker', 'Kubernetes', 'Terraform'],
+                security: ['Penetration Testing', 'OWASP', 'Cryptography', 'Network Security'],
+                ai: ['TensorFlow', 'OpenAI API', 'LangChain', 'Neural Networks', 'ChatBot Development']
+            },
+            projects: [
+                {
+                    name: 'KONGALI1720 Elite Terminal',
+                    tech: ['HTML5', 'CSS3', 'JavaScript'],
+                    description: 'Professional hacker-themed terminal dengan working shell commands dan matrix effects',
+                    features: ['Interactive shell', 'Matrix rain animation', 'Command system', 'Hacker aesthetics']
+                },
+                {
+                    name: 'Quantum Banking System',
+                    tech: ['React.js', 'Node.js', 'PostgreSQL', 'Blockchain'],
+                    description: 'Secure banking platform dengan real-time transactions dan AI fraud detection',
+                    features: ['Real-time transactions', 'AI fraud detection', 'Quantum encryption', 'Multi-currency']
+                },
+                {
+                    name: 'CyberSec Dashboard',
+                    tech: ['Python', 'Django', 'TensorFlow', 'D3.js'],
+                    description: 'Real-time cybersecurity monitoring dengan threat analysis dan ML predictions',
+                    features: ['Threat monitoring', 'ML predictions', 'Real-time alerts', 'Security analytics']
+                }
+            ],
+            experience: {
+                years: '5+',
+                projectsCompleted: '50+',
+                clientSatisfaction: '98%',
+                specialization: ['Full-Stack Development', 'Cybersecurity', 'AI/ML Integration']
+            },
+            contact: {
+                email: 'kongali1720@elite-dev.com',
+                linkedin: 'linkedin.com/in/kongali1720',
+                github: 'github.com/kongali1720',
+                location: 'Jakarta, Indonesia'
+            },
+            rates: {
+                fullstack: '$50-100/hour',
+                security: '$100-200/hour',
+                ai: '$90-180/hour',
+                packages: {
+                    mvp: '$5,000-15,000',
+                    enterprise: '$20,000-50,000',
+                    transformation: '$30,000+'
+                }
+            }
+        };
+
+        function toggleTerminal() {
+            const terminalMode = document.getElementById('terminal-mode');
+            const mainFooter = document.getElementById('main-footer');
+            const sections = document.querySelectorAll('.section-content');
+            
+            if (isTerminalOpen) {
+                terminalMode.classList.add('hidden');
+                mainFooter.classList.remove('hidden');
+                sections.forEach(section => section.classList.remove('hidden'));
+                document.getElementById('home').classList.remove('hidden');
+                sections.forEach(section => {
+                    if (section.id !== 'home') section.classList.add('hidden');
+                });
+                isTerminalOpen = false;
+            } else {
+                sections.forEach(section => section.classList.add('hidden'));
+                mainFooter.classList.add('hidden');
+                document.getElementById('ai-chat-mode').classList.add('hidden');
+                terminalMode.classList.remove('hidden');
+                document.getElementById('terminal-input').focus();
+                isTerminalOpen = true;
+                isAIChatOpen = false;
+            }
+        }
+
+        // AI Chat System
+        function toggleAIChat() {
+            const aiChatMode = document.getElementById('ai-chat-mode');
+            const mainFooter = document.getElementById('main-footer');
+            const sections = document.querySelectorAll('.section-content');
+            
+            if (isAIChatOpen) {
+                aiChatMode.classList.add('hidden');
+                mainFooter.classList.remove('hidden');
+                sections.forEach(section => section.classList.remove('hidden'));
+                document.getElementById('home').classList.remove('hidden');
+                sections.forEach(section => {
+                    if (section.id !== 'home') section.classList.add('hidden');
+                });
+                isAIChatOpen = false;
+            } else {
+                sections.forEach(section => section.classList.add('hidden'));
+                mainFooter.classList.add('hidden');
+                document.getElementById('terminal-mode').classList.add('hidden');
+                aiChatMode.classList.remove('hidden');
+                document.getElementById('ai-chat-input').focus();
+                isAIChatOpen = true;
+                isTerminalOpen = false;
+            }
+        }
+
+        // AI Response Generator
+        function generateAIResponse(userInput) {
+            const input = userInput.toLowerCase();
+            
+            // Skills-related questions
+            if (input.includes('skill') || input.includes('kemampuan') || input.includes('tech')) {
+                return `🔥 KONGALI1720 TECHNICAL SKILLS:
+
+💻 FRONTEND: ${aiKnowledgeBase.skills.frontend.join(', ')}
+⚡ BACKEND: ${aiKnowledgeBase.skills.backend.join(', ')}
+🗄️ DATABASE: ${aiKnowledgeBase.skills.database.join(', ')}
+☁️ CLOUD: ${aiKnowledgeBase.skills.cloud.join(', ')}
+🛡️ SECURITY: ${aiKnowledgeBase.skills.security.join(', ')}
+🤖 AI/ML: ${aiKnowledgeBase.skills.ai.join(', ')}
+
+Gue udah ${aiKnowledgeBase.experience.years} tahun experience dengan ${aiKnowledgeBase.experience.projectsCompleted} projects completed! 🚀
+
+Mau tau detail skill tertentu? Just ask! 💪`;
+            }
+            
+            // Projects-related questions
+            else if (input.includes('project') || input.includes('portfolio') || input.includes('karya')) {
+                const projectList = aiKnowledgeBase.projects.map((project, index) => 
+                    `[${index + 1}] 🎯 ${project.name}
+    Tech: ${project.tech.join(', ')}
+    ${project.description}
+    Features: ${project.features.join(', ')}`
+                ).join('\n\n');
+                
+                return `🌌 KONGALI1720 ELITE PROJECTS:
+
+${projectList}
+
+Total projects completed: ${aiKnowledgeBase.experience.projectsCompleted}
+Client satisfaction rate: ${aiKnowledgeBase.experience.clientSatisfaction}
+
+Mau liat demo project tertentu? Atau pengen tau detail implementasinya? 🔥`;
+            }
+            
+            // Hiring/Rate questions
+            else if (input.includes('rate') || input.includes('harga') || input.includes('hire') || input.includes('bayar')) {
+                return `💰 KONGALI1720 HIRING INFORMATION:
+
+🚀 DEVELOPMENT SERVICES:
+• Full-Stack Web Apps: ${aiKnowledgeBase.rates.fullstack}
+• Mobile Applications: $60-120/hour
+• Enterprise Solutions: $80-150/hour
+
+🛡️ CYBERSECURITY SERVICES:
+• Penetration Testing: ${aiKnowledgeBase.rates.security}
+• Security Audits: $80-150/hour
+• Compliance Setup: $70-130/hour
+
+🤖 AI/ML SERVICES:
+• Custom AI Solutions: ${aiKnowledgeBase.rates.ai}
+• ChatBot Development: $60-120/hour
+• Data Analysis: $70-140/hour
+
+💎 PACKAGE DEALS:
+• Startup MVP: ${aiKnowledgeBase.rates.packages.mvp}
+• Enterprise System: ${aiKnowledgeBase.rates.packages.enterprise}
+• Digital Transformation: ${aiKnowledgeBase.rates.packages.transformation}
+
+Contact: ${aiKnowledgeBase.contact.email}
+Response time: <24 hours! 🚀`;
+            }
+            
+            // Interview practice
+            else if (input.includes('interview') || input.includes('wawancara') || input.includes('practice')) {
+                const questions = [
+                    "Explain your approach to building scalable web applications",
+                    "How do you handle security in your applications?",
+                    "What's your experience with microservices architecture?",
+                    "How do you implement CI/CD in your projects?",
+                    "Describe a challenging project and how you solved it"
+                ];
+                const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+                
+                return `🎤 INTERVIEW PRACTICE MODE ACTIVATED!
+
+Here's a technical question for you:
+
+❓ "${randomQuestion}"
+
+Take your time to answer! Gue bakal kasih feedback based on KONGALI1720's experience dan best practices.
+
+Want another question? Just say "next question" atau "soal lagi"! 💪
+
+Pro tip: KONGALI1720 always emphasizes security, scalability, dan clean code dalam semua jawaban interview! 🔥`;
+            }
+            
+            // Demo requests
+            else if (input.includes('demo') || input.includes('showcase') || input.includes('lihat')) {
+                return `🚀 PROJECT DEMO SHOWCASE:
+
+Pilih mana yang mau lu lihat:
+
+[1] 🌌 Elite Terminal Demo
+    - Live hacking interface
+    - Matrix effects in action
+    - Interactive command system
+
+[2] 🏦 Banking System Demo  
+    - Real-time transaction simulation
+    - AI fraud detection demo
+    - Security features showcase
+
+[3] 🛡️ CyberSec Dashboard Demo
+    - Live threat monitoring
+    - ML prediction algorithms
+    - Security analytics visualization
+
+Tinggal ketik nomor yang mau lu lihat, misalnya "demo 1" atau "show me project 2"!
+
+Atau mau live coding session? Say "live coding" dan gue bisa simulasi KONGALI1720 ngoding real-time! 💻⚡`;
+            }
+            
+            // Contact info
+            else if (input.includes('contact') || input.includes('hubungi') || input.includes('email')) {
+                return `📞 KONGALI1720 CONTACT INFO:
+
+📧 Email: ${aiKnowledgeBase.contact.email}
+💼 LinkedIn: ${aiKnowledgeBase.contact.linkedin}
+🐙 GitHub: ${aiKnowledgeBase.contact.github}
+📍 Location: ${aiKnowledgeBase.contact.location}
+
+🔥 RESPONSE TIME: <24 hours guaranteed!
+💬 Languages: Indonesian, English
+🌍 Timezone: WIB (GMT+7)
+
+Available for:
+• Project consultations
+• Technical discussions  
+• Collaboration opportunities
+• Freelance/contract work
+
+Ready to start your next elite project? Hit me up! 🚀`;
+            }
+            
+            // Greetings
+            else if (input.includes('hai') || input.includes('hello') || input.includes('hi') || input.includes('halo')) {
+                return `🔥 Halo bang! Gue AI Assistant KONGALI1720! 
+
+Seneng banget bisa kenalan sama lu! 🚀
+
+Gue bisa bantuin lu dengan semua info tentang KONGALI1720:
+• 💻 Technical skills & expertise
+• 🎯 Project portfolio & demos  
+• 💰 Hiring rates & packages
+• 🎤 Interview practice sessions
+• 📞 Contact & collaboration info
+
+Mau nanya apa nih? Gue siap bantuin! Just shoot your questions! 💪⚡`;
+            }
+            
+            // General/Default response
+            else {
+                const responses = [
+                    `🤔 Hmm, menarik banget pertanyaannya! 
+
+Berdasarkan knowledge base KONGALI1720, gue bisa kasih insight tentang:
+• Full-stack development approach
+• Cybersecurity best practices
+• AI/ML integration strategies
+• Project architecture decisions
+
+Bisa tolong spesifik lagi pertanyaannya? Atau mau gue jelasin salah satu topik di atas? 🚀`,
+                    
+                    `💡 Good question! KONGALI1720 always approaches problems with:
+
+1. 🔒 Security-first mindset
+2. ⚡ Performance optimization
+3. 📱 Scalable architecture
+4. 🛠️ Clean, maintainable code
+
+Mau gue elaborate lebih detail tentang approach ini? Atau ada aspek teknis lain yang mau lu explore? 🔥`,
+                    
+                    `🎯 Sebagai AI assistant KONGALI1720, gue punya akses ke semua portfolio data!
+
+Try asking about:
+• "Skills overview" - untuk technical capabilities
+• "Best projects" - untuk project highlights  
+• "Hiring info" - untuk rates & packages
+• "Interview practice" - untuk technical Q&A
+
+What interests you most? 💪`
+                ];
+                
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+        }
+
+        // Handle AI Chat Input
+        function handleAIChatInput(event) {
+            if (event.key === 'Enter') {
+                const input = event.target.value.trim();
+                if (!input) return;
+
+                const response = generateAIResponse(input);
+                
+                addToAIChatHistory(`👤 User: ${input}`, 'user');
+                addToAIChatHistory(`🤖 KONGALI1720 AI: ${response}`, 'ai');
+
+                event.target.value = '';
+                scrollAIChatToBottom();
+            }
+        }
+
+        // Quick AI Questions
+        function askAI(question) {
+            const response = generateAIResponse(question);
+            
+            addToAIChatHistory(`👤 User: ${question}`, 'user');
+            addToAIChatHistory(`🤖 KONGALI1720 AI: ${response}`, 'ai');
+
+            scrollAIChatToBottom();
+        }
+
+        function addToAIChatHistory(content, type) {
+            const historyDiv = document.getElementById('ai-chat-history');
+            const div = document.createElement('div');
+            div.className = 'mb-3';
+            
+            if (type === 'user') {
+                div.innerHTML = `<div class="text-green-400 font-bold">${content}</div>`;
+            } else {
+                div.innerHTML = `<div class="text-cyan-400 whitespace-pre-line border-l-2 border-cyan-400/30 pl-3 ml-2">${content}</div>`;
+            }
+            
+            historyDiv.appendChild(div);
+        }
+
+        function scrollAIChatToBottom() {
+            const chatContent = document.getElementById('ai-chat-content');
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+
+        const terminalCommands = {
+            help: () => `
+🔥 KONGALI1720 PORTFOLIO COMMANDS:
+• about      : Show developer information
+• skills     : Display technical skills
+• projects   : List portfolio projects
+• contact    : Get contact information  
+• resume     : Download CV/Resume
+• hire       : Hiring information
+• clear      : Clear terminal
+• demo       : Run project demo`,
+
+            about: () => `
+👑 ELITE DEVELOPER PROFILE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name: KONGALI1720 Elite Developer
+Specialization: Full-Stack Development & Cybersecurity
+Experience: 5+ Years Professional Development
+Location: Jakarta, Indonesia
+Status: Available for Elite Projects
+
+💀 EXPERTISE:
+• Advanced Web Development (React, Node.js, Python)
+• Cybersecurity & Penetration Testing
+• AI/ML Integration & Automation
+• Cloud Architecture (AWS, GCP, Azure)
+• Mobile Development (React Native, Flutter)
+• DevOps & System Administration`,
+
+            skills: () => `
+⚡ TECHNICAL ARSENAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 FRONTEND: React.js, Vue.js, Angular, TypeScript
+💻 BACKEND: Node.js, Python, Go, Java, PHP
+🗄️ DATABASE: PostgreSQL, MongoDB, Redis, MySQL
+☁️ CLOUD: AWS, Google Cloud, Azure, Docker, Kubernetes
+🔐 SECURITY: Penetration Testing, OWASP, Cryptography
+🤖 AI/ML: TensorFlow, PyTorch, OpenAI API, LangChain
+📱 MOBILE: React Native, Flutter, Swift, Kotlin`,
+
+            projects: () => `
+🎯 ELITE PROJECT PORTFOLIO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[1] 🌌 KONGALI1720 Elite Terminal
+    Tech: HTML5, CSS3, JavaScript, Matrix Effects
+    Features: Working shell, hacker aesthetics, interactive
+    
+[2] 🏦 Quantum Banking System  
+    Tech: React, Node.js, PostgreSQL, Blockchain
+    Features: Real-time transactions, AI fraud detection
+    
+[3] 🛡️ CyberSec Dashboard
+    Tech: Python, Django, TensorFlow, D3.js
+    Features: Threat analysis, ML-powered predictions`,
+
+            contact: () => `
+📞 ELITE CONTACT CHANNELS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 Email: kongali1720@elite-dev.com
+💼 LinkedIn: linkedin.com/in/kongali1720
+🐙 GitHub: github.com/kongali1720
+📱 WhatsApp: +62-8xx-xxxx-xxxx
+🌐 Website: kongali1720.dev`,
+
+            hire: () => `
+💰 ELITE DEVELOPER SERVICES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 FULL-STACK DEVELOPMENT:
+   • Web Applications: $50-100/hour
+   • Mobile Apps: $60-120/hour
+   • Enterprise Solutions: $80-150/hour
+
+🛡️ CYBERSECURITY SERVICES:
+   • Penetration Testing: $100-200/hour
+   • Security Audits: $80-150/hour`,
+
+            resume: () => `
+📄 CV/RESUME DOWNLOAD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 Downloading: KONGALI1720_Elite_Developer_CV.pdf
+📁 File Size: 2.1 MB
+🔒 Security: Encrypted PDF
+✅ Download initiated...`,
+
+            demo: () => `
+🎮 INTERACTIVE PROJECT DEMOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌌 Loading demo environment...
+⚡ Initializing virtual sandbox...
+🔧 Preparing interactive showcase...`,
+
+            clear: () => 'CLEAR_TERMINAL'
+        };
+
+        function handleTerminalInput(event) {
+            if (event.key === 'Enter') {
+                const input = event.target.value.trim();
+                if (!input) return;
+
+                const command = input.toLowerCase();
+                const output = terminalCommands[command] || `Command not found: ${command}\nType 'help' for available commands.`;
+                
+                addToTerminalHistory(`root@kongali1720:~# ${input}`, 'input');
+                
+                if (output === 'CLEAR_TERMINAL') {
+                    document.getElementById('terminal-history').innerHTML = '';
+                } else {
+                    addToTerminalHistory(output, 'output');
+                }
+
+                event.target.value = '';
+                scrollTerminalToBottom();
+            }
+        }
+
+        function addToTerminalHistory(content, type) {
+            const historyDiv = document.getElementById('terminal-history');
+            const div = document.createElement('div');
+            div.className = 'mb-2';
+            
+            if (type === 'input') {
+                div.innerHTML = `<div class="text-cyan-400">${content}</div>`;
+            } else {
+                div.innerHTML = `<div class="text-green-400 whitespace-pre-line">${content}</div>`;
+            }
+            
+            historyDiv.appendChild(div);
+        }
+
+        function scrollTerminalToBottom() {
+            const terminalContent = document.getElementById('terminal-content');
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createMatrixRain();
+            
+            // Terminal input handler
+            const terminalInput = document.getElementById('terminal-input');
+            if (terminalInput) {
+                terminalInput.addEventListener('keydown', handleTerminalInput);
+                
+                // Keep input focused
+                terminalInput.addEventListener('blur', function() {
+                    setTimeout(() => this.focus(), 10);
+                });
+            }
+
+            // AI Chat input handler
+            const aiChatInput = document.getElementById('ai-chat-input');
+            if (aiChatInput) {
+                aiChatInput.addEventListener('keydown', handleAIChatInput);
+            }
+            
+            console.log('🌌 KONGALI1720 Elite Portfolio Loaded Successfully! 🔥');
+        });
+    </script>
+</body>
+</html>
